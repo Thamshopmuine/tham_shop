@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thắm Shop | Vietnamese Products</title>
+<style>
+:root{--green:#176b3a;--red:#c92127;--gold:#d9a82e;--ink:#17244d;--bg:#f7f7f3}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:#fff;border-bottom:1px solid #e8eadf;position:sticky;top:0;z-index:5}
+.nav{max-width:1100px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-weight:900;font-size:25px;color:var(--red)} .logo span{color:var(--green)}
+nav a{text-decoration:none;color:var(--ink);margin-left:18px;font-weight:700;font-size:14px}
+.hero{background:linear-gradient(135deg,#fff,#eef5e9);padding:54px 20px}
+.hero-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+.eyebrow{color:var(--green);font-weight:800;letter-spacing:1.5px}
+h1{font-size:48px;line-height:1.05;margin:10px 0 16px}
+.hero p{font-size:18px;line-height:1.6;max-width:650px}
+.btn{display:inline-block;background:var(--green);color:#fff;padding:13px 20px;border-radius:10px;text-decoration:none;font-weight:800;margin-top:8px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.badge{background:#fff;padding:9px 12px;border-radius:30px;font-weight:700;border:1px solid #e1e5da}
+.hero-card{background:#fff;border-radius:24px;padding:28px;box-shadow:0 8px 35px #00000012;text-align:center}
+.hero-card .t{font-size:72px}.hero-card h2{margin:5px 0}
+main{max-width:1100px;margin:auto;padding:40px 20px}
+.section-title{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}
+h2{font-size:28px;margin:0 0 7px}.muted{color:#697181}
+.categories{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
+.cat{border:1px solid #dfe5d9;background:#fff;border-radius:30px;padding:9px 14px;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.product{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 3px 16px #0000000b}
+.product-img{height:210px;display:grid;place-items:center;background:#f1f4eb;font-size:82px}
+.product-body{padding:18px}.product h3{margin:0 0 7px;font-size:19px}.price{color:var(--red);font-size:21px;font-weight:900;margin:12px 0}
+.product a{display:inline-block;color:var(--green);font-weight:800;text-decoration:none}
+.info{margin-top:40px;background:#fff;border-radius:20px;padding:25px}
+footer{background:#173a29;color:#fff;margin-top:30px;padding:35px 20px}.foot{max-width:1100px;margin:auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+@media(max-width:760px){.hero-inner{grid-template-columns:1fr}h1{font-size:36px}.grid{grid-template-columns:1fr 1fr}nav a{display:none}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.hero{padding:35px 18px}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<div class="logo">THẮM <span>SHOP</span></div>
+<nav><a href="#products">SẢN PHẨM</a><a href="#about">VỀ THẮM SHOP</a><a href="#contact">LIÊN HỆ</a></nav>
+</div></header>
+
+<section class="hero"><div class="hero-inner">
+<div>
+<div class="eyebrow">THẮM SHOP • MŨI NÉ • VIỆT NAM</div>
+<h1>Tinh hoa Việt<br>vươn mình bền vững.</h1>
+<p>Khám phá cà phê, trà, đặc sản Việt Nam, quà lưu niệm và những sản phẩm được lựa chọn dành cho du khách.</p>
+<a class="btn" href="#products">Khám phá sản phẩm</a>
+<div class="badges"><span class="badge">🇻🇳 Việt Nam</span><span class="badge">🇬🇧 English</span><span class="badge">🇷🇺 Русский</span><span class="badge">🇨🇳 中文</span></div>
+</div>
+<div class="hero-card"><div class="t">🌾</div><h2>THẮM SHOP</h2><p class="muted">Vietnamese Souvenirs • Coffee • Tea • Local Specialties</p></div>
+</div></section>
+
+<main>
+<section id="products">
+<div class="section-title"><div><h2>Sản phẩm</h2><div class="muted">Danh mục sản phẩm của Thắm Shop</div></div></div>
+<div class="categories"><span class="cat">☕ Cà phê</span><span class="cat">🍵 Trà</span><span class="cat">🎁 Quà lưu niệm</span><span class="cat">🛍️ Đặc sản Việt Nam</span><span class="cat">🌴 Sản phẩm du lịch</span></div>
+<div class="grid">
+<article class="product"><div class="product-img">🧴</div><div class="product-body"><h3>Banana Boat Sport Ultra</h3><div class="muted">SPF50+ PA++++ • 90ml</div><div class="price">149.000đ</div><a href="#banana-boat">Xem thông tin →</a></div></article>
+<article class="product"><div class="product-img">☕</div><div class="product-body"><h3>Vietnam Coffee</h3><div class="muted">Arabica Blend • 80% Arabica / 20% Robusta</div><div class="price">—</div><a href="#coffee">Sắp cập nhật →</a></div></article>
+<article class="product"><div class="product-img">🍵</div><div class="product-body"><h3>Vietnam Tea</h3><div class="muted">Sản phẩm trà Việt Nam</div><div class="price">—</div><a href="#tea">Sắp cập nhật →</a></div></article>
+</div>
+</section>
+
+<section id="banana-boat" class="info">
+<h2>Banana Boat Sport Ultra Sunscreen Lotion</h2>
+<p><b>SPF50+ PA++++ • 90ml • Xuất xứ: Thái Lan</b></p>
+<hr>
+<h3>🇻🇳 TIẾNG VIỆT</h3><p>Kem chống nắng dạng lotion. Chống UVA/UVB, chống nước và mồ hôi, phù hợp thể thao, bơi lội và hoạt động ngoài trời.</p><p><b>Cách dùng:</b> Thoa đều trước khi ra nắng 15–20 phút. Thoa lại sau khi bơi, đổ mồ hôi nhiều hoặc lau bằng khăn.</p>
+<h3>🇬🇧 ENGLISH</h3><p>Sunscreen lotion. UVA/UVB protection. Water and sweat resistant, suitable for sports, swimming and outdoor activities.</p><p><b>Directions:</b> Apply evenly 15–20 minutes before sun exposure. Reapply after swimming, heavy sweating or toweling off.</p>
+<h3>🇷🇺 РУССКИЙ</h3><p>Солнцезащитный лосьон. Защита от UVA/UVB. Водостойкий и устойчивый к поту, подходит для спорта, плавания и активного отдыха.</p><p><b>Применение:</b> Нанесите за 15–20 минут до выхода на солнце. Повторно нанесите после плавания, сильного потоотделения или вытирания полотенцем.</p>
+<h3>🇨🇳 中文</h3><p>防晒乳液。防护UVA/UVB，防水防汗，适合运动、游泳及户外活动。</p><p><b>使用方法：</b>出门前15–20分钟均匀涂抹。游泳、大量出汗或用毛巾擦拭后请重新涂抹。</p>
+</section>
+
+<section id="about" class="info"><h2>Về Thắm Shop</h2><p>Thắm Shop giới thiệu những sản phẩm Việt Nam và các sản phẩm tiện ích dành cho du khách. Website này được thiết kế để khách có thể quét QR trên từng sản phẩm và xem thông tin bằng ngôn ngữ phù hợp.</p></section>
+</main>
+
+<footer id="contact"><div class="foot"><div><b>THẮM SHOP</b><br>Mũi Né, Việt Nam</div><div>🇻🇳 🇬🇧 🇷🇺 🇨🇳<br>Thông tin sản phẩm đa ngôn ngữ</div></div></footer>
+</body></html>
