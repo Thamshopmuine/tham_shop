@@ -31,28 +31,27 @@ main{width:min(760px,calc(100% - 28px));margin:22px auto 42px;background:var(--w
 <section id="result" class="content hidden"></section>
 </main>
 <script>
-let product=null,source=null;
+let product=null,source=null,languageSource=null;
 const images={
 '01':'https://www.lottemart.vn/media/catalog/product/cache/75x75/0/0/0079656603248-1.jpg.webp','02':'https://medias.watsons.vn/publishing/WTCVN-218425-side-zoom.jpg?version=1778085125','03':'https://cdn.taw9eel.com/media/catalog/product/cache/1/image/519x/9df78eab33525d08d6e5fb8d27136e95/m/h/mhjr1681_1.jpg','04':'https://www.guardian.com.vn/media/catalog/product/cache/30b2b44eba57cd45fd3ef9287600968e/3/0/3020168.png','05':'https://www.herbiflix.com/cdn/shop/files/71p1rp0m4YL._AC_SL1500.jpg?v=1761847295&width=1200','06':'https://favo.id/cdn/shop/files/BANTUB1012_Banana-Boat-After-Sun-Care-Aloe-Gel---90-mL.jpg?v=1772778753','07':'https://media.home.bargains/product-images/b/9/3/9/b9391251b3da3df966135f6d92ed855c4edf39a1.png?fit=cover&x=676&y=676','08':'https://i5.walmartimages.com/seo/Banana-Boat-Sport-Ultra-SPF-65-Sunscreen-Spray-6oz_909f1ffd-d0c8-47f4-8aee-afd6369b5692.0247d3f44b739b2bf27d74ea6b1460.jpeg','09':'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/109/MTA-68439565/banana_boat_banana_boat_ultra_protect_spf50_90ml_full01_dxnk58wk.jpg','10':'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/109/MTA-68439565/banana_boat_banana_boat_ultra_protect_spf50_90ml_full01_dxnk58wk.jpg','11':'https://f.nooncdn.com/p/pzsku/Z925D97444CF0D3CC0A67Z/45/_/1771586667/7bddb801-9520-45b9-a6a4-607b07906dd3.jpg','12':'https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-luxa8c3ttmhee6','13':'https://assets.beiersdorf.com/-/media/images/8/a/9/b/9c873ab9c46f4562909404cc005503c3-web_1010x1180_transparent_png.png?ctx=in&hash=f555756b9fc53623b3b2e365d4f654b85&mw=768','14':'https://mcgrocer.com/cdn/shop/files/nivea-sun-protect-dry-touch-sun-cream-spray-spf50-200ml-41391391768814.jpg?v=1744439833','15':'https://rokbucket.rokomari.io/ProductNew20190903/260X372/Nivea_Sun_Protect_Moisture_Pump_Spray_SP-Nivea-33d8c-493293.png','16':'https://f.nooncdn.com/p/pzsku/ZAE09F60C5B37B807439Z/45/1765750701/4dbab885-f373-419b-8b23-22fa9f4fc70b.jpg?width=800','17':'https://www.bbassets.com/media/uploads/p/l/40008021_5-nivea-sun-lotion-spf-30-with-uva-uvb-protection-water-resistant-sunscreen-for-men-women.jpg','18':'https://media.farmaciatei.ro/gallery/48266/ulei-spray-pentru-plaja-cu-spf-6-tropical-bronze-200-ml-nivea-sun-9115.jpg'};
 const ui={vi:{label:'🇻🇳 TIẾNG VIỆT',back:'← Chọn ngôn ngữ khác'},en:{label:'🇬🇧 ENGLISH',back:'← Choose another language'},ru:{label:'🇷🇺 РУССКИЙ',back:'← Выбрать другой язык'},zh:{label:'🇨🇳 中文',back:'← 选择其他语言'}};
-function esc(s){return String(s??'').replace(/[&<>\"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','\\':'&#92;','"':'&quot;'}[m]))}
+function esc(s){return String(s??'').replace(/[&<>\\"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','\\':'&#92;','"':'&quot;'}[m]))}
 function md(s){
  let x=esc(s);
  x=x.replace(/^#### (.+)$/gm,'<h3>$1</h3>').replace(/^### (.+)$/gm,'<h3>$1</h3>').replace(/^## (.+)$/gm,'<h2>$1</h2>');
  x=x.replace(/^\\- (.+)$/gm,'<li>$1</li>').replace(/^- (.+)$/gm,'<li>$1</li>');
- x=x.replace(/(<li>[\s\S]*?<\/li>)(?=\s*<li>)/g,'$1');
- x=x.replace(/((?:<li>.*<\/li>\s*)+)/g,'<ul>$1</ul>');
+ x=x.replace(/((?:<li>[\s\S]*?<\/li>\s*)+)/g,'<ul>$1</ul>');
  x=x.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
  x=x.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
  x=x.replace(/\n{2,}/g,'</p><p>').replace(/\n/g,'<br>');
  return '<p>'+x+'</p>';
 }
 function render(k){
- if(k==='vi'){
-   const raw=source?.products?.[product.id]?.raw_vi;
-   if(!raw)return '<div class="error">Không tìm thấy nội dung tiếng Việt.</div>';
-   return '<div class="selected">'+ui.vi.label+'</div><div class="source-body">'+md(raw)+'</div><a class="back" href="javascript:location.reload()">'+ui.vi.back+'</a>';
+ const raw=languageSource?.products?.[product.id]?.[k];
+ if(raw){
+   return '<div class="selected">'+ui[k].label+'</div><div class="source-body">'+md(raw)+'</div><a class="back" href="javascript:location.reload()">'+ui[k].back+'</a>';
  }
+ if(k==='vi')return '<div class="error">Không tìm thấy nội dung tiếng Việt.</div>';
  const d=product[k];
  if(!d)return '<div class="error">Không tìm thấy nội dung ngôn ngữ này.</div>';
  let h='<div class="selected">'+ui[k].label+'</div><div class="source-body"><h2>'+esc(d.name)+'</h2><p>'+esc(d.description)+'</p>';
@@ -66,9 +65,13 @@ async function init(){
  let raw=new URLSearchParams(location.search).get('product')||'';raw=raw.padStart(2,'0');
  if(!/^\d{2}$/.test(raw)||+raw<1||+raw>18){document.getElementById('title').textContent='Không tìm thấy sản phẩm';document.getElementById('choices').innerHTML='<div class="error">Mã sản phẩm không hợp lệ.</div>';document.getElementById('productImage').classList.add('hidden');return}
  try{
-   const [a,b]=await Promise.all([fetch('./products-master.json?'+Date.now(),{cache:'no-store'}),fetch('./products-detail-source.json?'+Date.now(),{cache:'no-store'})]);
-   if(!a.ok||!b.ok)throw Error('Cannot load product data');
-   const master=await a.json();source=await b.json();product=master.products.find(x=>x.id===raw);
+   const [a,b,c]=await Promise.all([
+     fetch('./products-master.json?'+Date.now(),{cache:'no-store'}),
+     fetch('./products-detail-source.json?'+Date.now(),{cache:'no-store'}),
+     fetch('./products-language-source.json?'+Date.now(),{cache:'no-store'})
+   ]);
+   if(!a.ok||!b.ok||!c.ok)throw Error('Cannot load product data');
+   const master=await a.json();source=await b.json();languageSource=await c.json();product=master.products.find(x=>x.id===raw);
    if(!product)throw Error('Product not found');
    document.getElementById('productImage').src=images[raw]||'';document.getElementById('productImage').alt=product.vi?.name||'';document.getElementById('title').textContent=product.vi?.name||source.products[raw]?.name||'';
  }catch(e){document.getElementById('title').textContent='Không thể tải thông tin sản phẩm';document.getElementById('choices').innerHTML='<div class="error">Vui lòng tải lại trang và thử lại.</div>';console.error(e)}
