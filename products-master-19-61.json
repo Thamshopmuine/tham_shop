@@ -1,0 +1,324 @@
+{
+  "products": [
+    {
+      "id": "19",
+      "name": "Ống hít sao vàng 1.5g",
+      "price": 15000,
+      "vi": {
+        "name": "Ống hít sao vàng 1.5g"
+      }
+    },
+    {
+      "id": "20",
+      "name": "Ống hít trường sơn (dây/6 ống)",
+      "price": 60000,
+      "vi": {
+        "name": "Ống hít trường sơn (dây/6 ống)"
+      }
+    },
+    {
+      "id": "21",
+      "name": "Dầu Mù U CATCHY20ml",
+      "price": 120000,
+      "vi": {
+        "name": "Dầu Mù U CATCHY20ml"
+      }
+    },
+    {
+      "id": "22",
+      "name": "Tinh Dầu Bi Lăn Balance – 9ml",
+      "price": 65000,
+      "vi": {
+        "name": "Tinh Dầu Bi Lăn Balance – 9ml"
+      }
+    },
+    {
+      "id": "24",
+      "name": "Tinh dầu Sả Chanh KingOil 100ml",
+      "price": 250000,
+      "vi": {
+        "name": "Tinh dầu Sả Chanh KingOil 100ml"
+      }
+    },
+    {
+      "id": "27",
+      "name": ". Dầu dừa tinh khiết Bình Coco 100ml",
+      "price": 50000,
+      "vi": {
+        "name": ". Dầu dừa tinh khiết Bình Coco 100ml"
+      }
+    },
+    {
+      "id": "28",
+      "name": "Dầu dừa tinh khiết Bình Coco 500ml",
+      "price": 130000,
+      "vi": {
+        "name": "Dầu dừa tinh khiết Bình Coco 500ml"
+      }
+    },
+    {
+      "id": "29",
+      "name": "Dầu dừa tinh khiết sả chanh Vietcoco 90ml",
+      "price": 140000,
+      "vi": {
+        "name": "Dầu dừa tinh khiết sả chanh Vietcoco 90ml"
+      }
+    },
+    {
+      "id": "30",
+      "name": "Dầu Dừa",
+      "price": 150000,
+      "vi": {
+        "name": "Dầu Dừa"
+      }
+    },
+    {
+      "id": "31",
+      "name": "Dầu dừa tinh khiết hương sả chanh Cofusions - 90ml",
+      "price": 150000,
+      "vi": {
+        "name": "Dầu dừa tinh khiết hương sả chanh Cofusions - 90ml"
+      }
+    },
+    {
+      "id": "32",
+      "name": "Xà bông Xơ mướp Sả Chanh 120g",
+      "price": 75000,
+      "vi": {
+        "name": "Xà bông Xơ mướp Sả Chanh 120g"
+      }
+    },
+    {
+      "id": "33",
+      "name": "Xà Bông Nghệ Sả Chanh Sinh Dược 110g",
+      "price": 65000,
+      "vi": {
+        "name": "Xà Bông Nghệ Sả Chanh Sinh Dược 110g"
+      }
+    },
+    {
+      "id": "34",
+      "name": "Xà bông dừa sả chanh Cofusions 100g",
+      "price": 60000,
+      "vi": {
+        "name": "Xà bông dừa sả chanh Cofusions 100g"
+      }
+    },
+    {
+      "id": "35",
+      "name": "Xà bông Xơ mướp Bạc Hà 120g",
+      "price": 75000,
+      "vi": {
+        "name": "Xà bông Xơ mướp Bạc Hà 120g"
+      }
+    },
+    {
+      "id": "36",
+      "name": "Xà Bông Hoa Bưởi Sinh Dược 110g",
+      "price": 65000,
+      "vi": {
+        "name": "Xà Bông Hoa Bưởi Sinh Dược 110g"
+      }
+    },
+    {
+      "id": "37",
+      "name": "Xà Bông Hoa Hồng Sinh Dược 110g",
+      "price": 65000,
+      "vi": {
+        "name": "Xà Bông Hoa Hồng Sinh Dược 110g"
+      }
+    },
+    {
+      "id": "38",
+      "name": "Xà Bông Tía Tô Sinh Dược 110g",
+      "price": 65000,
+      "vi": {
+        "name": "Xà Bông Tía Tô Sinh Dược 110g"
+      }
+    },
+    {
+      "id": "39",
+      "name": "Xà Bông Sinh Dược Mật Ong Nghệ 110g",
+      "price": 65000,
+      "vi": {
+        "name": "Xà Bông Sinh Dược Mật Ong Nghệ 110g"
+      }
+    },
+    {
+      "id": "40",
+      "name": "Xà bông Bồ Kết sinh dược 110g",
+      "price": 65000,
+      "vi": {
+        "name": "Xà bông Bồ Kết sinh dược 110g"
+      }
+    },
+    {
+      "id": "41",
+      "name": "Xà bông sinh dược than tre 110g",
+      "price": 65000,
+      "vi": {
+        "name": "Xà bông sinh dược than tre 110g"
+      }
+    },
+    {
+      "id": "42",
+      "name": "Tinh dầu Sả chanh Sinh Dược 100ml",
+      "price": 300000,
+      "vi": {
+        "name": "Tinh dầu Sả chanh Sinh Dược 100ml"
+      }
+    },
+    {
+      "id": "43",
+      "name": "Tinh dầu Sả chanh Sinh Dược 10ml",
+      "price": 75000,
+      "vi": {
+        "name": "Tinh dầu Sả chanh Sinh Dược 10ml"
+      }
+    },
+    {
+      "id": "44",
+      "name": "Cao xoa bóp Bạch Hổ Hoạt",
+      "price": 30000,
+      "vi": {
+        "name": "Cao xoa bóp Bạch Hổ Hoạt"
+      }
+    },
+    {
+      "id": "45",
+      "name": "Dầu Lăn Sâm Thảo Dược Bảo Linh",
+      "price": 50000,
+      "vi": {
+        "name": "Dầu Lăn Sâm Thảo Dược Bảo Linh"
+      }
+    },
+    {
+      "id": "46",
+      "name": "Dầu Lăn Gừng Thảo Dược Bảo",
+      "price": 50000,
+      "vi": {
+        "name": "Dầu Lăn Gừng Thảo Dược Bảo"
+      }
+    },
+    {
+      "id": "47",
+      "name": "Dầu Lăn Ngải Cứu Thảo Dược",
+      "price": 50000,
+      "vi": {
+        "name": "Dầu Lăn Ngải Cứu Thảo Dược"
+      }
+    },
+    {
+      "id": "48",
+      "name": "Kem Xoa Bóp Tigre Blanc Bảo",
+      "price": 150000,
+      "vi": {
+        "name": "Kem Xoa Bóp Tigre Blanc Bảo"
+      }
+    },
+    {
+      "id": "49",
+      "name": "Dầu Tràm Tinh Chế Bạch Thảo",
+      "price": 90000,
+      "vi": {
+        "name": "Dầu Tràm Tinh Chế Bạch Thảo"
+      }
+    },
+    {
+      "id": "50",
+      "name": "HỒNG LINH CỐT 20g",
+      "price": 50000,
+      "vi": {
+        "name": "HỒNG LINH CỐT 20g"
+      }
+    },
+    {
+      "id": "51",
+      "name": "Cao Sao Vàng 10g",
+      "price": 28000,
+      "vi": {
+        "name": "Cao Sao Vàng 10g"
+      }
+    },
+    {
+      "id": "52",
+      "name": ". Cao Sao Vàng 20g",
+      "price": 40000,
+      "vi": {
+        "name": ". Cao Sao Vàng 20g"
+      }
+    },
+    {
+      "id": "53",
+      "name": "Dầu gió xanh Thiên Thảo 12ml",
+      "price": 29000,
+      "vi": {
+        "name": "Dầu gió xanh Thiên Thảo 12ml"
+      }
+    },
+    {
+      "id": "54",
+      "name": "Dầu gió Trường Sơn 6ml",
+      "price": 20000,
+      "vi": {
+        "name": "Dầu gió Trường Sơn 6ml"
+      }
+    },
+    {
+      "id": "55",
+      "name": "Dầu Phật Linh Trường Sơn 1.5ml",
+      "price": 15000,
+      "vi": {
+        "name": "Dầu Phật Linh Trường Sơn 1.5ml"
+      }
+    },
+    {
+      "id": "56",
+      "name": "Tiger Balm RED 19.4g",
+      "price": 49000,
+      "vi": {
+        "name": "Tiger Balm RED 19.4g"
+      }
+    },
+    {
+      "id": "57",
+      "name": "Tiger Balm WHITE 19.4g",
+      "price": 49000,
+      "vi": {
+        "name": "Tiger Balm WHITE 19.4g"
+      }
+    },
+    {
+      "id": "58",
+      "name": "Tiger Balm Plaster-RD",
+      "price": 85000,
+      "vi": {
+        "name": "Tiger Balm Plaster-RD"
+      }
+    },
+    {
+      "id": "59",
+      "name": "Tiger Balm Oil",
+      "price": 120000,
+      "vi": {
+        "name": "Tiger Balm Oil"
+      }
+    },
+    {
+      "id": "60",
+      "name": "Dầu Cu Là Thiên Thảo 30g",
+      "price": 50000,
+      "vi": {
+        "name": "Dầu Cu Là Thiên Thảo 30g"
+      }
+    },
+    {
+      "id": "61",
+      "name": "Dầu Gió Hổ Lộc Vàng",
+      "price": 50000,
+      "vi": {
+        "name": "Dầu Gió Hổ Lộc Vàng"
+      }
+    }
+  ]
+}
