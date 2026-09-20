@@ -1,0 +1,131 @@
+{
+  "version": "1.0",
+  "brand": "THẮM SHOP",
+  "products": {
+    "19": {
+      "id": "19",
+      "name": "Ống hít sao vàng 1.5g",
+      "price_vnd": 15000
+    },
+    "20": {
+      "id": "20",
+      "name": "Ống hít trường sơn (dây/6 ống)",
+      "price_vnd": 60000
+    },
+    "21": {
+      "id": "21",
+      "name": "Dầu Mù U CATCHY20ml",
+      "price_vnd": 120000
+    },
+    "22": {
+      "id": "22",
+      "name": "Tinh Dầu Bi Lăn Balance – 9ml",
+      "price_vnd": 65000
+    },
+    "23": {
+      "id": "23",
+      "name": "TINH DẦU MASSAGE BALANCE – 100 ml",
+      "price_vnd": 300000
+    },
+    "24": {
+      "id": "24",
+      "name": "Tinh dầu Sả Chanh KingOil 100ml",
+      "price_vnd": 250000
+    },
+    "25": {
+      "id": "25",
+      "name": "Tinh Dầu Sả Chanh Nguyên Chất TIDAMO 100ml",
+      "price_vnd": 200000
+    },
+    "26": {
+      "id": "26",
+      "name": "Dầu dừa tinh khiết Bình Coco 250ml",
+      "price_vnd": 75000
+    },
+    "27": {
+      "id": "27",
+      "name": "Dầu dừa tinh khiết Bình Coco 100ml",
+      "price_vnd": 50000
+    },
+    "28": {
+      "id": "28",
+      "name": "Dầu dừa tinh khiết Bình Coco 500ml",
+      "price_vnd": 130000
+    },
+    "29": {
+      "id": "29",
+      "name": "Dầu dừa tinh khiết sả chanh Vietcoco 90ml",
+      "price_vnd": 140000
+    },
+    "30": {
+      "id": "30",
+      "name": "Dầu Dừa Tinh Khiết Vietcoco - 130ml",
+      "price_vnd": 150000
+    },
+    "31": {
+      "id": "31",
+      "name": "Dầu dừa tinh khiết hương sả chanh Cofusions - 90ml",
+      "price_vnd": 150000
+    },
+    "32": {
+      "id": "32",
+      "name": "Xà bông Xơ mướp Sả Chanh 120g",
+      "price_vnd": 75000
+    },
+    "33": {
+      "id": "33",
+      "name": "Xà Bông Nghệ Sả Chanh Sinh Dược 110g",
+      "price_vnd": 65000
+    },
+    "34": {
+      "id": "34",
+      "name": "Xà bông dừa sả chanh Cofusions 100g",
+      "price_vnd": 60000
+    },
+    "35": {
+      "id": "35",
+      "name": "Xà bông Xơ mướp Bạc Hà 120g",
+      "price_vnd": 75000
+    },
+    "36": {
+      "id": "36",
+      "name": "Xà Bông Hoa Bưởi Sinh Dược 110g",
+      "price_vnd": 65000
+    },
+    "37": {
+      "id": "37",
+      "name": "Xà Bông Hoa Hồng Sinh Dược 110g",
+      "price_vnd": 65000
+    },
+    "38": {
+      "id": "38",
+      "name": "Xà Bông Tía Tô Sinh Dược 110g",
+      "price_vnd": 65000
+    },
+    "39": {
+      "id": "39",
+      "name": "Xà Bông Sinh Dược Mật Ong Nghệ 110g",
+      "price_vnd": 65000
+    },
+    "40": {
+      "id": "40",
+      "name": "Xà bông Bồ Kết sinh dược 110g",
+      "price_vnd": 65000
+    },
+    "41": {
+      "id": "41",
+      "name": "Xà bông sinh dược than tre 110g",
+      "price_vnd": 65000
+    },
+    "42": {
+      "id": "42",
+      "name": "Tinh dầu Sả chanh Sinh Dược 100ml",
+      "price_vnd": 300000
+    },
+    "43": {
+      "id": "43",
+      "name": "Tinh dầu Sả chanh Sinh Dược 10ml",
+      "price_vnd": 75000
+    }
+  }
+}
