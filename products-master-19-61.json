@@ -1,4 +1,7 @@
 {
+  "version": "2026-09-21",
+  "source": "Thắm Shop MASTER product data 19-61",
+  "pricePolicy": "Physical-label price only; QR detail page removes price.",
   "products": [
     {
       "id": "19",
@@ -33,11 +36,35 @@
       }
     },
     {
+      "id": "23",
+      "name": "TINH DẦU MASSAGE BALANCE – 100 ml",
+      "price": 300000,
+      "vi": {
+        "name": "TINH DẦU MASSAGE BALANCE – 100 ml"
+      }
+    },
+    {
       "id": "24",
       "name": "Tinh dầu Sả Chanh KingOil 100ml",
       "price": 250000,
       "vi": {
         "name": "Tinh dầu Sả Chanh KingOil 100ml"
+      }
+    },
+    {
+      "id": "25",
+      "name": "Tinh Dầu Sả Chanh Nguyên Chất TIDAMO 100ml",
+      "price": 200000,
+      "vi": {
+        "name": "Tinh Dầu Sả Chanh Nguyên Chất TIDAMO 100ml"
+      }
+    },
+    {
+      "id": "26",
+      "name": "Dầu dừa tinh khiết Bình Coco 250ml",
+      "price": 75000,
+      "vi": {
+        "name": "Dầu dừa tinh khiết Bình Coco 250ml"
       }
     },
     {
