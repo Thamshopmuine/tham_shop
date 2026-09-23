@@ -33,4 +33,58 @@ function md(s){let x=esc(s);x=x.replace(/^#### (.+)$/gm,'<h3>$1</h3>').replace(/
 function getDetailRaw(){return product?.raw_vi?.replace(/^\s*[-·]?\s*\*?\*?Giá\s*:.*$/gmi,'').replace(/\n{3,}/g,'\n\n')||null}
 let translationsReady=false,translationsPromise=null;
 function render(k){if(k==='vi'){const raw=getDetailRaw();return raw?'<div class="selected">'+ui.vi.label+'</div><div class="source-body">'+md(raw)+'</div><a class="back" href="javascript:location.reload()">'+ui.vi.back+'</a>':'<div class="error">Không tìm thấy nội dung tiếng Việt.</div>'}const raw=product?.[k];if(raw)return '<div class="selected">'+ui[k].label+'</div><div class="source-body">'+md(raw)+'</div><a class="back" href="javascript:location.reload()">'+ui[k].back+'</a>';return '<div class="error">'+(translationsReady?'Bản dịch ngôn ngữ này chưa được cập nhật cho sản phẩm này.':'Đang tải bản dịch… Vui lòng chọn lại ngôn ngữ sau giây lát.')+'</div>'}
-function loadTranslations(){fetch('translations-19-61.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('translation load failed');return r.json()}).then(t=>{Object.entries(t.products||{}).forEach(([id,v])=>{const p=DATA.products.find(x=>x.id===id.padStart(2,'0'));if(p){p.en=v.en?.body||null;p.ru=v.ru?.body||null;p.zh=v.zh?.body||null}});translationsReady=true}).catch(()=>{translationsReady=true})}
+function loadTranslations(){
+  if(translationsPromise)return translationsPromise;
+  translationsPromise=fetch('translations-19-61.json',{cache:'no-store'})
+    .then(r=>{if(!r.ok)throw new Error('translation load failed');return r.json()})
+    .then(t=>{
+      Object.entries(t.products||{}).forEach(([id,v])=>{
+        const p=DATA.products.find(x=>x.id===id.padStart(2,'0'));
+        if(p){
+          p.en=v.en?.body||null;
+          p.ru=v.ru?.body||null;
+          p.zh=v.zh?.body||null;
+        }
+      });
+      translationsReady=true;
+    })
+    .catch(()=>{translationsReady=true;});
+  return translationsPromise;
+}
+function getProductId(){
+  const q=new URLSearchParams(location.search).get('product');
+  return (q||'').replace(/\\D/g,'').padStart(2,'0');
+}
+function init(){
+  const id=getProductId();
+  product=DATA.products.find(p=>p.id===id);
+  if(!product){
+    document.getElementById('title').textContent='Không tìm thấy sản phẩm';
+    document.getElementById('choices').innerHTML='<div class="error">Mã sản phẩm không hợp lệ.</div>';
+    return;
+  }
+  document.getElementById('title').textContent=product.name;
+  const image=document.getElementById('productImage');
+  if(images[id]){
+    image.src=images[id];
+    image.alt=product.name;
+  }else{
+    image.style.display='none';
+    document.querySelector('.image-wrap').style.height='40px';
+  }
+}
+async function showLanguage(k){
+  const result=document.getElementById('result');
+  document.getElementById('choices').classList.add('hidden');
+  result.classList.remove('hidden');
+  if(k!=='vi' && !translationsReady){
+    result.innerHTML='<div class="selected">'+ui[k].label+'</div><div class="error">Đang tải bản dịch…</div>';
+    await loadTranslations();
+  }
+  result.innerHTML=render(k);
+}
+init();
+loadTranslations();
+</script>
+</body>
+</html>
