@@ -48,9 +48,9 @@ const ui={
 function esc(s){return String(s??'').replace(/[&<>\\"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','\\':'&#92;','"':'&quot;'}[m]))}
 function inline(s){
   let x=esc(s);
-  x=x.replaceAll('\\\\','');
-  x=x.replace(/\\*\\*([^*]+)\\*\\*/g,'<strong>$1</strong>');
-  x=x.replace(/\\[([^\\]]+)\\]\\(([^)]+)\\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+  x=x.replaceAll('\\','');
+  x=x.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  x=x.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
   return x;
 }
 function blockHtml(lines){
