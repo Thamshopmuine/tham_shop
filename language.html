@@ -73,7 +73,7 @@ function detailSections(raw){
     const boldOnly=t.match(/^[-·]?\s*\*\*([^*]+)\*\*\s*$/);
     const label=t.match(/^\*\*([^*]+):\*\*\s*$/);
     const bt=boldOnly?.[1]?.trim()||'';
-    const boldHeading=!!boldOnly && (bt.length<=60 || /^[A-ZÀ-Ỹ\s0-9&+–—-]+$/.test(bt));
+    const boldHeading=!!boldOnly && !bt.includes(':') && (bt.length<=60 || /^[A-ZÀ-Ỹ\s0-9&+–—-]+$/.test(bt));
     if(h||label||boldHeading){
       push(); title=(h?h[1]:label?label[1]:bt).replace(/:$/,''); continue;
     }
