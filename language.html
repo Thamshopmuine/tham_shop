@@ -63,15 +63,15 @@ function blockHtml(lines){
   return '<p>'+clean.join(' ').split(/<br>/).map(inline).join(' ')+'</p>';
 }
 function detailSections(raw){
-  const lines=String(raw||'').replace(/\\r/g,'').split('\\n');
+  const lines=String(raw||'').replace(/\r/g,'').split('\n');
   const sections=[]; let title='Overview'; let body=[];
   const push=()=>{if(body.some(x=>x.trim()))sections.push({title,body:body.slice()});body=[];};
-  for(let line of lines){
+  for(const line of lines){
     const t=line.trim();
     if(!t){if(body.length && body[body.length-1]!=='') body.push('');continue;}
-    const h=t.match(/^#{2,4}\\s+(.+)$/);
-    const boldOnly=t.match(/^[-·]?\\s*\\*\\*([^*]+)\\*\\*\\s*$/);
-    const label=t.match(/^\\*\\*([^*]+):\\*\\*\\s*$/);
+    const h=t.match(/^#{2,4}\s+(.+)$/);
+    const boldOnly=t.match(/^[-·]?\s*\*\*([^*]+)\*\*\s*$/);
+    const label=t.match(/^\*\*([^*]+):\*\*\s*$/);
     if(h||boldOnly||label){
       push(); title=(h?h[1]:boldOnly?boldOnly[1]:label[1]).replace(/:$/,''); continue;
     }
@@ -89,7 +89,9 @@ function renderSections(raw){
     return '<article class="detail-card'+(i===0?' accent':'')+'"><h2>'+inline(s.title)+'</h2>'+groups.map(blockHtml).join('')+'</article>';
   }).join('')+'</div>';
 }
-function getDetailRaw(){return product?.raw_vi?.replace(/^\\s*[-·]?\\s*\\*?\\*?Giá\\s*:.*$/gmi,'').replace(/\\n{3,}/g,'\\n\\n')||null}
+function getDetailRaw(){
+  return product?.raw_vi?.replace(/^\s*[-·]?\s*\*?\*?Giá\s*:.*$/gmi,'').replace(/\n{3,}/g,'\n\n')||null;
+}
 let translationsReady=false,translationsPromise=null;
 function loadTranslations(){
   if(translationsPromise)return translationsPromise;
