@@ -72,8 +72,10 @@ function detailSections(raw){
     const h=t.match(/^#{2,4}\s+(.+)$/);
     const boldOnly=t.match(/^[-·]?\s*\*\*([^*]+)\*\*\s*$/);
     const label=t.match(/^\*\*([^*]+):\*\*\s*$/);
-    if(h||boldOnly||label){
-      push(); title=(h?h[1]:boldOnly?boldOnly[1]:label[1]).replace(/:$/,''); continue;
+    const bt=boldOnly?.[1]?.trim()||'';
+    const boldHeading=!!boldOnly && (bt.length<=60 || /^[A-ZÀ-Ỹ\s0-9&+–—-]+$/.test(bt));
+    if(h||label||boldHeading){
+      push(); title=(h?h[1]:label?label[1]:bt).replace(/:$/,''); continue;
     }
     body.push(t);
   }
