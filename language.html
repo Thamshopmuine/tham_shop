@@ -117,11 +117,20 @@ function getDetailRaw(){
 let translationsReady=false,translationsPromise=null;
 function loadTranslations(){
   if(translationsPromise)return translationsPromise;
-  translationsPromise=Promise.all([
-    fetch('translations-19-61.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('translation load failed');return r.json();}),
-    fetch('translations-62-112.json',{cache:'no-store'}).then(r=>r.ok?r.json():({products:{}})).catch(()=>({products:{}}))
-  ]).then(([t,t2])=>{
-    const merged={products:{...(t.products||{}),...(t2.products||{})}};
+  const sources=[
+    'translations-19-61.json',
+    'translations-62-70-full-complete.json',
+    'translations-71-79-complete.json',
+    'translations-80-88-complete.json',
+    'translations-89-97-complete.json',
+    'translations-98-106-complete.json',
+    'translations-107-112-complete.json'
+  ];
+  translationsPromise=Promise.all(
+    sources.map(src=>fetch(src,{cache:'no-store'}).then(r=>r.ok?r.json():({products:{}})).catch(()=>({products:{}})))
+  ).then(all=>{
+    const merged={products:{}};
+    all.forEach(t=>Object.assign(merged.products,t.products||{}));
     Object.entries(merged.products||{}).forEach(([id,v])=>{
       const p=DATA.products.find(x=>x.id===id.padStart(2,'0'));
       if(p){p.en=v.en?.body||null;p.ru=v.ru?.body||null;p.zh=v.zh?.body||null;}
