@@ -19,6 +19,24 @@
 .back{display:flex;align-items:center;justify-content:center;margin-top:22px;padding:15px 18px;border:1px solid var(--line);border-radius:15px;color:var(--green);font-weight:850;text-decoration:none;background:#fbfdfb}.back:hover{background:#f2f7f3}
 .footer{padding:18px 24px 21px;text-align:center;border-top:1px solid var(--line);background:#fbfcfb;color:var(--muted);font-size:9px;letter-spacing:1.5px;text-transform:uppercase}.error{text-align:center;color:#9a3434;padding:28px 10px}.hidden{display:none!important}
 @media(max-width:560px){.shell{width:calc(100% - 12px);margin:6px auto 20px;border-radius:23px}.top{padding:21px 17px 19px}.brand{font-size:13px;letter-spacing:3.5px}.hero{padding:20px 17px 19px}.image-wrap{min-height:150px}.product-image{height:155px}.product-placeholder{width:125px;height:125px;border-radius:32px}.placeholder-code{font-size:23px}.placeholder-sub{bottom:19px;font-size:8px}.title{font-size:21px}.chooser{padding:7px 16px 22px}.lang-grid{grid-template-columns:1fr;gap:10px}.lang{min-height:68px;padding:14px 14px;border-radius:16px}.content{padding:0 16px 26px}.selected{padding-top:14px}.detail-card{padding:15px 15px;border-radius:16px}.detail-card p{font-size:14.5px}.detail-card li{font-size:14px}}
+/* v2026.10 international reading layout */
+.lang-grid{grid-template-columns:repeat(4,1fr);gap:10px}
+.lang{min-height:72px;padding:13px 12px;gap:9px;border-radius:16px}
+.lang .flag{width:26px;flex-basis:26px;font-size:21px}
+.lang-main{font-size:14px}.lang small{font-size:10px}
+.reading-intro{display:flex;align-items:center;gap:12px;margin:0 0 18px;padding:13px 15px;border:1px solid #e5ece7;border-radius:16px;background:linear-gradient(135deg,#f7faf7,#fff)}
+.reading-mark{width:34px;height:34px;border-radius:11px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex:0 0 34px}
+.reading-intro strong{display:block;color:var(--green);font-size:12px;letter-spacing:.7px}.reading-intro span{display:block;margin-top:3px;color:var(--muted);font-size:11px;line-height:1.45}
+.detail-grid{gap:14px}.detail-card{position:relative;padding:18px 19px 19px;border-radius:19px;overflow:hidden}
+.detail-card:after{content:"";position:absolute;left:0;top:0;width:3px;height:100%;background:linear-gradient(180deg,var(--gold),rgba(176,138,69,.08));opacity:.85}
+.detail-card h2{padding-right:8px;margin-bottom:12px;font-size:15px}.detail-card h2:before{display:none}
+.detail-card h2 .section-no{display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:8px;background:#edf4ef;color:var(--green);font-size:10px;letter-spacing:0;flex:0 0 25px}
+.detail-card p{font-size:15px;line-height:1.78}.detail-card li{font-size:14.5px;line-height:1.7}
+.detail-card.accent{background:linear-gradient(135deg,#f4f9f5,#fff)}.detail-card.accent h2 .section-no{background:var(--green);color:#fff}
+@media(min-width:700px){.detail-grid{grid-template-columns:1fr 1fr;align-items:start}.detail-card:first-child{grid-column:1/-1}}
+@media(max-width:700px){.lang-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.lang-grid{grid-template-columns:1fr 1fr}.lang{min-height:66px;padding:12px 10px}.lang-main{font-size:13px}.lang small{font-size:9px}.detail-card{padding:16px 15px 17px}.reading-intro{padding:12px}}
+@media(max-width:390px){.lang-grid{grid-template-columns:1fr}.lang{min-height:62px}}
 </style>
 </head>
 <body>
@@ -84,12 +102,14 @@ function detailSections(raw){
 }
 function renderSections(raw){
   const sections=detailSections(raw);
-  return '<div class="detail-grid">'+sections.map((s,i)=>{
+  const intro='<div class="reading-intro"><div class="reading-mark">i</div><div><strong>PRODUCT DETAILS</strong><span>Information is organized into clear sections for quick international reading.</span></div></div>';
+  const cards=sections.map((sec,i)=>{
     const groups=[];let cur=[];
-    s.body.forEach(line=>{if(!line.trim()){if(cur.length){groups.push(cur);cur=[]}}else cur.push(line)});
+    sec.body.forEach(line=>{if(!line.trim()){if(cur.length){groups.push(cur);cur=[]}}else cur.push(line)});
     if(cur.length)groups.push(cur);
-    return '<article class="detail-card'+(i===0?' accent':'')+'"><h2>'+inline(s.title)+'</h2>'+groups.map(blockHtml).join('')+'</article>';
-  }).join('')+'</div>';
+    return '<article class="detail-card'+(i===0?' accent':'')+'"><h2><span class="section-no">'+String(i+1).padStart(2,'0')+'</span>'+inline(sec.title)+'</h2>'+groups.map(blockHtml).join('')+'</article>';
+  }).join('');
+  return intro+'<div class="detail-grid">'+cards+'</div>';
 }
 function getDetailRaw(){
   return product?.raw_vi?.replace(/^\s*[-·]?\s*\*?\*?Giá\s*:.*$/gmi,'').replace(/\n{3,}/g,'\n\n')||null;
